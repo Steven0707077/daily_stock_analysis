@@ -32,13 +32,16 @@ jobs:
 
       - name: Run daily stock analysis
         env:
+          SEARCH_SERVICE: tavily
+          SEARCH_ENGINE: tavily
+          SEARCH_PROVIDER: tavily
+          NEWS_SEARCH_SERVICE: tavily
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           STOCKS: ${{ secrets.STOCKS }}
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
-          SEARCH_SERVICE: tavily
         run: |
           # 可以先把关键环境变量打印出来，方便排查
           echo "TAVILY_API_KEY: ${TAVILY_API_KEY:0:10}..." 
