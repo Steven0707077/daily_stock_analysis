@@ -38,6 +38,7 @@ jobs:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           STOCKS: ${{ secrets.STOCKS }}
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          SEARCH_SERVICE: tavily
         run: |
           # 可以先把关键环境变量打印出来，方便排查
           echo "TAVILY_API_KEY: ${TAVILY_API_KEY:0:10}..." 
